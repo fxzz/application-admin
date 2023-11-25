@@ -4,6 +4,13 @@
 
 <mapper namespace="com.nexacro.orderBoard.mapper.UiadapterBoardMapper">
 	
+	 <select id="selectCountTodayAccount" resultType="Map">
+        SELECT COUNT(*) as count
+        FROM account
+        WHERE DATE(createdat) = DATE(NOW())
+    </select>
+	
+	
 	<update id="deleteCommunity" parameterType="Map">
 	UPDATE community
     SET deleted = 1

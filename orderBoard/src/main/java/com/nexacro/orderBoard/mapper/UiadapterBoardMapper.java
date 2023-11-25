@@ -48,5 +48,7 @@ public interface UiadapterBoardMapper {
 
 	public void deleteCommunity(Map<String, Object> ds_del);
 	
+	Map<String, Object> selectCountTodayAccount();
+	
 	
 }

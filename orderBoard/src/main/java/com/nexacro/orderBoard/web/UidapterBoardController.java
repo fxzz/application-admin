@@ -52,6 +52,16 @@ public class UidapterBoardController {
 	private UidapterBoardService uidapterSampleService;
 	
 	
+	@RequestMapping(value = "/orderBoard/selectSaveUserCount.do")
+	public NexacroResult selectCountTodayAccount() throws NexacroException {
+		NexacroResult result = new NexacroResult();
+		Map<String, Object> ds_userSaveCount = new HashMap<>();
+		ds_userSaveCount = uidapterSampleService.selectCountTodayAccount();
+		result.addDataSet("ds_userSaveCount", ds_userSaveCount);
+		return result;
+	}
+	
+	
 	@RequestMapping(value = "/orderBoard/deleteCommunity.do")
 	public NexacroResult deleteCommunity(@ParamDataSet(name = "ds_del")Map<String, Object> ds_del) throws NexacroException {
 		NexacroResult result = new NexacroResult();

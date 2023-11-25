@@ -13,7 +13,7 @@
             this.set_titletext("New Form");
             if (Form == this.constructor)
             {
-                this._setFormPosition(1280,720);
+                this._setFormPosition(1010,650);
             }
             
             // Object(Dataset, ExcelExportObject) Initialize
@@ -74,9 +74,14 @@
             obj.set_binddataset("ds_list");
             obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"136\"/><Column size=\"193\"/><Column size=\"225\"/><Column size=\"119\"/><Column size=\"153\"/><Column size=\"115\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell text=\"게시글 번호\"/><Cell col=\"1\" text=\"제목\"/><Cell col=\"2\" text=\"내용\"/><Cell col=\"3\" text=\"닉네임\"/><Cell col=\"4\" text=\"작성일\"/><Cell col=\"5\" text=\"신고 개수\"/></Band><Band id=\"body\"><Cell text=\"bind:id\" textAlign=\"center\"/><Cell col=\"1\" text=\"bind:title\" textAlign=\"center\"/><Cell col=\"2\" text=\"bind:content\" textAlign=\"center\"/><Cell col=\"3\" text=\"bind:nickname\" textAlign=\"center\"/><Cell col=\"4\" text=\"bind:created\" textAlign=\"center\" calendardateformat=\"yyyy-MM-dd HH:mm:ss\"/><Cell col=\"5\" text=\"bind:count\" textAlign=\"center\"/></Band></Format></Formats>");
             this.addChild(obj.name, obj);
+
+            obj = new Button("btn00","810","20","133","49",null,null,null,null,null,null,this);
+            obj.set_taborder("6");
+            obj.set_text("닫기");
+            this.addChild(obj.name, obj);
             // Layout Functions
             //-- Default Layout : this
-            obj = new Layout("default","",1280,720,this,function(p){});
+            obj = new Layout("default","",1010,650,this,function(p){});
             this.addLayout(obj.name, obj);
             
             // BindItem Information
@@ -167,6 +172,11 @@
 
         };
 
+        this.btn00_onclick = function(obj,e)
+        {
+        	this.close();
+        };
+
         });
         
         // Regist UI Components Event
@@ -176,6 +186,7 @@
             this.btn_selectCommunity.addEventHandler("onclick",this.btn_selectCommunity_onclick,this);
             this.btn_delCommunity.addEventHandler("onclick",this.btn_delCommunity_onclick,this);
             this.grd_communityList.addEventHandler("oncelldblclick",this.grd_communityList_oncelldblclick,this);
+            this.btn00.addEventHandler("onclick",this.btn00_onclick,this);
         };
         this.loadIncludeScript("OB_001.xfdl");
         this.loadPreloadList();

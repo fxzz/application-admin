@@ -107,6 +107,12 @@ public class UidapterBoardServiceImpl implements UidapterBoardService {
 	public void deleteCommunity(Map<String, Object> ds_del) {
 		UiadapterBoardMapper mapper = sqlSession.getMapper(UiadapterBoardMapper.class);
 		mapper.deleteCommunity(ds_del);
-		
 	}
+
+	@Override
+	public Map<String, Object> selectCountTodayAccount() {
+		UiadapterBoardMapper mapper = sqlSession.getMapper(UiadapterBoardMapper.class);
+		return mapper.selectCountTodayAccount();
+	}
+	
 }

@@ -37,6 +37,9 @@ public interface UidapterBoardService {
 	ArrayList<Map<String, Object>> selectCommunityList(Map<String, Object> ds_search);
 
 	void deleteCommunity(Map<String, Object> ds_del);
+
+	Map<String, Object> selectCountTodayAccount();
+	
 	
 	
 }

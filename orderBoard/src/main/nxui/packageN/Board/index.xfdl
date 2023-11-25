@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="index" width="1280" height="720" titletext="New Form" onload="index_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Static id="sta03" taborder="5" left="163" top="18" width="127" height="62" border="1px solid black"/>
+        <Static id="sta00" taborder="0" text="어드민" left="11" top="13" width="139" height="87" font="bold 12px/normal &quot;Gulim&quot;" background="azure" textAlign="center" border="1px solid black"/>
+        <Button id="btn00" taborder="1" text="게시글 관리 이동" left="11" top="120" width="139" height="60" onclick="btn00_onclick"/>
+        <Button id="btn01" taborder="2" text="댓글 관리 이동" left="10" top="213" width="139" height="55"/>
+        <Static id="sta01" taborder="3" text="sta01" left="251" top="30" width="70" height="30" onclick="sta01_onclick"/>
+        <Static id="sta02" taborder="4" text="오늘 가입자" left="170" top="30" width="81" height="30"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.btn00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var oArg = {}; //팝업을 열 때 부모창에서 가져갈 데이터가 있으면 데이터 세팅
+	
+	var oOption = {}; // 기본값 가운데 정렬
+	
+	var sPopupCallBack = "fnPopupCallback"; // 팝업 닫았을때 후처리 콜백
+	
+	this.gfnOpenPopup( "popup", "Board::OB_001.xfdl",oArg,sPopupCallBack,oOption);
+};
+
+
+
+
+this.index_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+
+
+	
+ 	var strSvcId = "selectSaveUserCount";
+ 	var strSvcUrl = "selectSaveUserCount.do";
+ 	var inData = "";
+ 	var outData = "ds_userSaveCount=ds_userSaveCount";
+ 	var strArg = "";
+ 	var callBackFnc = "fnCallback";
+ 	
+ 	this.gfnTransaction(
+ 	strSvcId,
+ 	strSvcUrl,
+ 	inData,
+ 	outData,
+ 	strArg,
+ 	callBackFnc
+ 	);
+	
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_userSaveCount">
+        <ColumnInfo>
+          <Column id="count" type="INT" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="sta01" propid="text" datasetid="ds_userSaveCount" columnid="count"/>
+    </Bind>
+  </Form>
+</FDL>
