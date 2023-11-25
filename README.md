@@ -22,8 +22,10 @@ application 프로젝트의 어드민 페이지가 웹 사이트 내에서 구�
 
 ## 주요 기능
 
-게시글 관리 - 내림차순으로 정렬해 조회하고 선택해서 삭제
-
-![넥사크로](https://github.com/fxzz/application-admin/assets/3148006/693a16d8-fcaf-424d-9c43-cc9b9ce8b83e)
+게시글 관리 - 최신, 신고 순서로 선택 조회, 삭제
 
 
+![1](https://github.com/fxzz/application-admin/assets/3148006/34fae670-20ac-4908-b729-dbfa3571a446)
+
+
+![2](https://github.com/fxzz/application-admin/assets/3148006/48095486-5ae8-4b19-b7eb-1f3bd048c52f)
