@@ -35,3 +35,9 @@ application 프로젝트의 어드민 페이지가 웹 사이트 내에서 구�
 댓글 관리
 
 ![넥사크로 댓글](https://github.com/fxzz/application-admin/assets/3148006/c7ea7211-3a78-407f-bc95-63e8798f6807)
+
+
+공지사항 쓰기
+
+![공지](https://github.com/fxzz/application-admin/assets/3148006/5907520e-66aa-4e27-af75-2e40baf54e35)
+
