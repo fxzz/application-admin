@@ -10,7 +10,7 @@
         this.on_create = function()
         {
             this.set_name("OB_001");
-            this.set_titletext("게시글 관리");
+            this.set_titletext("댓글 관리");
             if (Form == this.constructor)
             {
                 this._setFormPosition(1010,650);
@@ -39,7 +39,7 @@
 
             obj = new Static("sta00","6","6","124","74",null,null,null,null,null,null,this);
             obj.set_taborder("0");
-            obj.set_text("게시글 관리");
+            obj.set_text("댓글 관리");
             obj.set_font("bold 16px/normal \"Gulim\"");
             obj.set_textAlign("center");
             obj.set_background("khaki");
@@ -72,7 +72,7 @@
             obj = new Grid("grd_communityList","6","110","946","479",null,null,null,null,null,null,this);
             obj.set_taborder("4");
             obj.set_binddataset("ds_list");
-            obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"136\"/><Column size=\"193\"/><Column size=\"225\"/><Column size=\"119\"/><Column size=\"153\"/><Column size=\"115\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell text=\"게시글 번호\"/><Cell col=\"1\" text=\"제목\"/><Cell col=\"2\" text=\"내용\"/><Cell col=\"3\" text=\"닉네임\"/><Cell col=\"4\" text=\"작성일\"/><Cell col=\"5\" text=\"신고 개수\"/></Band><Band id=\"body\"><Cell text=\"bind:id\" textAlign=\"center\"/><Cell col=\"1\" text=\"bind:title\" textAlign=\"center\"/><Cell col=\"2\" text=\"bind:content\" textAlign=\"center\"/><Cell col=\"3\" text=\"bind:nickname\" textAlign=\"center\"/><Cell col=\"4\" text=\"bind:created\" textAlign=\"center\" calendardateformat=\"yyyy-MM-dd HH:mm:ss\"/><Cell col=\"5\" text=\"bind:count\" textAlign=\"center\"/></Band></Format></Formats>");
+            obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"136\"/><Column size=\"193\"/><Column size=\"225\"/><Column size=\"119\"/><Column size=\"153\"/><Column size=\"115\"/></Columns><Rows><Row size=\"24\" band=\"head\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell text=\"댓글 번호\"/><Cell col=\"1\" text=\"제목\"/><Cell col=\"2\" text=\"내용\"/><Cell col=\"3\" text=\"닉네임\"/><Cell col=\"4\" text=\"작성일\"/><Cell col=\"5\" text=\"신고 개수\"/></Band><Band id=\"body\"><Cell text=\"bind:id\" textAlign=\"center\"/><Cell col=\"1\" text=\"bind:title\" textAlign=\"center\"/><Cell col=\"2\" text=\"bind:content\" textAlign=\"center\"/><Cell col=\"3\" text=\"bind:nickname\" textAlign=\"center\"/><Cell col=\"4\" text=\"bind:created\" textAlign=\"center\" calendardateformat=\"yyyy-MM-dd HH:mm:ss\"/><Cell col=\"5\" text=\"bind:count\" textAlign=\"center\"/></Band></Format></Formats>");
             this.addChild(obj.name, obj);
 
             obj = new Button("btn00","810","20","133","49",null,null,null,null,null,null,this);
@@ -97,7 +97,7 @@
         };
         
         // User Script
-        this.registerScript("OB_001.xfdl", function() {
+        this.registerScript("OB_002.xfdl", function() {
 
         this.OB_001_onload = function(obj,e)
         {
@@ -126,8 +126,8 @@
 
 
 
-        	var strSvcId = "selectCommunity";
-        	var strSvcUrl = "selectCommunity.do";
+        	var strSvcId = "selectComment";
+        	var strSvcUrl = "selectComment.do";
         	var inData = "ds_search=ds_searchList";
         	var outData = "ds_list=ds_list";
         	var strArg = "";
@@ -188,7 +188,7 @@
             this.grd_communityList.addEventHandler("oncelldblclick",this.grd_communityList_oncelldblclick,this);
             this.btn00.addEventHandler("onclick",this.btn00_onclick,this);
         };
-        this.loadIncludeScript("OB_001.xfdl");
+        this.loadIncludeScript("OB_002.xfdl");
         this.loadPreloadList();
         
         // Remove Reference

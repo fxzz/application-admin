@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="OB_001" width="1010" height="650" titletext="게시글 관리" onload="OB_001_onload">
+  <Form id="OB_001" width="1010" height="650" titletext="댓글 관리" onload="OB_001_onload">
     <Layouts>
       <Layout height="650" width="1010">
         <Static id="sta01" taborder="5" left="155" top="5" width="310" height="79" border="1px solid black"/>
-        <Static id="sta00" taborder="0" text="게시글 관리" left="6" top="6" width="124" height="74" font="bold 16px/normal &quot;Gulim&quot;" textAlign="center" background="khaki" border="1px solid"/>
+        <Static id="sta00" taborder="0" text="댓글 관리" left="6" top="6" width="124" height="74" font="bold 16px/normal &quot;Gulim&quot;" textAlign="center" background="khaki" border="1px solid"/>
         <Button id="btn_selectCommunity" taborder="1" text="조회" left="320" top="20" width="125" height="51" onclick="btn_selectCommunity_onclick"/>
         <Button id="btn_delCommunity" taborder="2" text="삭제" left="570" top="20" width="122" height="49" onclick="btn_delCommunity_onclick"/>
         <Combo id="cbo_communityStat" taborder="3" text="선택" left="170" top="20" width="132" height="51" value="" index="-1" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" displaynulltext="선택">
@@ -41,7 +41,7 @@
                 <Row size="24"/>
               </Rows>
               <Band id="head">
-                <Cell text="게시글 번호"/>
+                <Cell text="댓글 번호"/>
                 <Cell col="1" text="제목"/>
                 <Cell col="2" text="내용"/>
                 <Cell col="3" text="닉네임"/>
@@ -90,8 +90,8 @@ this.btn_selectCommunity_onclick = function(obj:nexacro.Button,e:nexacro.ClickEv
 	
 
 	
-	var strSvcId = "selectCommunity";
-	var strSvcUrl = "selectCommunity.do";
+	var strSvcId = "selectComment";
+	var strSvcUrl = "selectComment.do";
 	var inData = "ds_search=ds_searchList";
 	var outData = "ds_list=ds_list";
 	var strArg = "";

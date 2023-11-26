@@ -50,5 +50,8 @@ public interface UiadapterBoardMapper {
 	
 	Map<String, Object> selectCountTodayAccount();
 	
+	ArrayList<Map<String, Object>> selectCommentList(Map<String, Object> ds_search);
+	
+	
 	
 }

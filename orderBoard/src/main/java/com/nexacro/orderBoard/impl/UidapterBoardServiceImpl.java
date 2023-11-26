@@ -114,5 +114,11 @@ public class UidapterBoardServiceImpl implements UidapterBoardService {
 		UiadapterBoardMapper mapper = sqlSession.getMapper(UiadapterBoardMapper.class);
 		return mapper.selectCountTodayAccount();
 	}
+
+	@Override
+	public ArrayList<Map<String, Object>> selectCommentList(Map<String, Object> ds_search) {
+		UiadapterBoardMapper mapper = sqlSession.getMapper(UiadapterBoardMapper.class);
+		return mapper.selectCommentList(ds_search);
+	}
 	
 }

@@ -71,6 +71,17 @@ public class UidapterBoardController {
 		return result;
 	}
 	
+	@RequestMapping(value = "/orderBoard/selectComment.do")
+	public NexacroResult selectComment(@ParamDataSet(name = "ds_search")Map<String, Object> ds_search) throws NexacroException {
+		// ds_search {TEST=1, DataSetRowType=0}
+		NexacroResult result = new NexacroResult();
+		ArrayList<Map<String, Object>> ds_list = new ArrayList<>();
+		
+		ds_list = uidapterSampleService.selectCommentList(ds_search);
+		result.addDataSet("ds_list", ds_list);
+		return result;
+	}
+	
 	
 	
 	@RequestMapping(value = "/orderBoard/selectCommunity.do")

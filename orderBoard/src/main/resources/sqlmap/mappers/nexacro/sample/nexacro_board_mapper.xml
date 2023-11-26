@@ -17,6 +17,28 @@
     WHERE communityId = #{TEST}
 	</update>
 	
+	<select id="selectCommentList" parameterType="Map" resultType="Map">
+	  SELECT
+        co.commentId AS id,
+        c.title,
+        co.content,
+        a.nickname,
+        co.createdAt as created,
+        COUNT(comment_report.commentId) AS count
+        FROM comment co
+        INNER JOIN community c ON co.communityId = c.communityId
+        INNER JOIN account a ON co.accountId = a.accountId
+        LEFT OUTER JOIN comment_report_history comment_report ON co.commentId = comment_report.commentId
+        where co.deleted is null
+        GROUP BY co.commentId, c.title, co.content, a.nickname, co.createdat
+       <if test="1 == TEST">
+        ORDER BY co.createdAt DESC
+        </if>
+         <if test="2 == TEST">
+        ORDER BY count DESC, co.createdAt DESC
+        </if>
+	</select>
+	
 	<select id="selectCommunityList" parameterType="Map" resultType="Map">
 	 SELECT
         c.communityId AS id, 

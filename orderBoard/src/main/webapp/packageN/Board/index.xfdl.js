@@ -10,7 +10,7 @@
         this.on_create = function()
         {
             this.set_name("index");
-            this.set_titletext("New Form");
+            this.set_titletext("인덱스");
             if (Form == this.constructor)
             {
                 this._setFormPosition(1280,720);
@@ -114,6 +114,17 @@
 
         };
 
+        this.btn01_onclick = function(obj,e)
+        {
+        	var oArg = {};
+
+        	var oOption = {};
+
+        	var sPopupCallBack = "fnPopupCallback";
+
+        	this.gfnOpenPopup( "popup", "Board::OB_002.xfdl",oArg,sPopupCallBack,oOption);
+        };
+
         });
         
         // Regist UI Components Event
@@ -121,6 +132,7 @@
         {
             this.addEventHandler("onload",this.index_onload,this);
             this.btn00.addEventHandler("onclick",this.btn00_onclick,this);
+            this.btn01.addEventHandler("onclick",this.btn01_onclick,this);
             this.sta01.addEventHandler("onclick",this.sta01_onclick,this);
         };
         this.loadIncludeScript("index.xfdl");

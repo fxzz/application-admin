@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="index" width="1280" height="720" titletext="New Form" onload="index_onload">
+  <Form id="index" width="1280" height="720" titletext="인덱스" onload="index_onload">
     <Layouts>
       <Layout height="720" width="1280">
         <Static id="sta03" taborder="5" left="163" top="18" width="127" height="62" border="1px solid black"/>
         <Static id="sta00" taborder="0" text="어드민" left="11" top="13" width="139" height="87" font="bold 12px/normal &quot;Gulim&quot;" background="azure" textAlign="center" border="1px solid black"/>
         <Button id="btn00" taborder="1" text="게시글 관리 이동" left="11" top="120" width="139" height="60" onclick="btn00_onclick"/>
-        <Button id="btn01" taborder="2" text="댓글 관리 이동" left="10" top="213" width="139" height="55"/>
+        <Button id="btn01" taborder="2" text="댓글 관리 이동" left="10" top="213" width="139" height="55" onclick="btn01_onclick"/>
         <Static id="sta01" taborder="3" text="sta01" left="251" top="30" width="70" height="30" onclick="sta01_onclick"/>
         <Static id="sta02" taborder="4" text="오늘 가입자" left="170" top="30" width="81" height="30"/>
       </Layout>
@@ -47,6 +47,17 @@ this.index_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
  	callBackFnc
  	);
 	
+};
+
+this.btn01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var oArg = {};
+	
+	var oOption = {};
+	
+	var sPopupCallBack = "fnPopupCallback";
+	
+	this.gfnOpenPopup( "popup", "Board::OB_002.xfdl",oArg,sPopupCallBack,oOption);
 };
 ]]></Script>
     <Objects>
