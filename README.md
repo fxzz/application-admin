@@ -17,7 +17,7 @@ application 프로젝트의 어드민 페이지가 웹 사이트 내에서 구�
 ## 개발 기간
 
 2023.11.05 ~ 2023.11.05 게시글 관리 <br>
-2023.11.26 ~ 2023.11.26 댓글 관리, 공지 쓰기
+2023.11.26 ~ 2023.11.26 댓글 관리, 공지 관리- 등록, 삭제, 수정
 
 
 ## 주요 기능
@@ -36,8 +36,25 @@ application 프로젝트의 어드민 페이지가 웹 사이트 내에서 구�
 
 ![넥사크로 댓글](https://github.com/fxzz/application-admin/assets/3148006/c7ea7211-3a78-407f-bc95-63e8798f6807)
 
+<br>
 
-공지사항 쓰기
+공지 관리
 
-![공지](https://github.com/fxzz/application-admin/assets/3148006/5907520e-66aa-4e27-af75-2e40baf54e35)
+![관리](https://github.com/fxzz/application-admin/assets/3148006/189efa60-329e-470d-a191-c84557c8fea8)
+
+<br>
+쓰기
+
+![쓰기](https://github.com/fxzz/application-admin/assets/3148006/48292642-bb80-4dc8-8c4d-7b07a9ce286f)
+
+<br>
+수정
+
+![수정](https://github.com/fxzz/application-admin/assets/3148006/4a3eebfc-0d54-4332-9d12-449f5320ab82)
+
+<br>
+삭제
+
+![삭제](https://github.com/fxzz/application-admin/assets/3148006/4407f659-5151-40a6-8306-4720b33bff9c)
+
 
